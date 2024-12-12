@@ -1,0 +1,2 @@
+** MObile SDK to add authenticator app to existing applications
+https://developer.transmitsecurity.com/guides/user/be_auth_totp_authenticator_ios/

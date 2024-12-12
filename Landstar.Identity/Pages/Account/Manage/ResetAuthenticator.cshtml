@@ -1,0 +1,13 @@
+﻿@page
+@model ResetAuthenticatorModel
+@inject IStringLocalizer<SharedResource> Localizer
+@inject IHtmlLocalizer<SharedResource> HtmlLocalizer
+
+@{
+  ViewData["Title"] = Localizer["Reset authenticator key"];
+  ViewData["ActivePage"] = ManageNavPages.TwoFactorAuthentication;
+}
+
+<partial name="_StatusMessage" for="StatusMessage" />
+<h4>@ViewData["Title"]</h4>
+@HtmlLocalizer["ResetAuthenticatorHtml"]

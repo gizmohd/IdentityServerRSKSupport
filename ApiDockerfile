@@ -1,0 +1,11 @@
+FROM lstrcontainers.azurecr.io/landstar.dockerbase:5.0-alpine
+
+EXPOSE 80
+
+WORKDIR /app
+
+ENV APPDYNAMICS_AGENT_TIER_NAME="IdentityServerApi"
+
+COPY ["_release/Landstar.Identity.Api/","/app/."]
+
+ENTRYPOINT ["dotnet", "Landstar.Identity.Api.dll"]

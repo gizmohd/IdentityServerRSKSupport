@@ -1,0 +1,8 @@
+  variables:
+   DotNetCoreVersion: 8.x
+   sonarScannerMode: MSBuild
+   nodeVersion: 16.x
+   veracodeTeams: 'Purple Reign'
+   K8s.ContainerName: identityserver
+   K8s.NameSpace: default
+   LaunchDarklyProjectKey: default

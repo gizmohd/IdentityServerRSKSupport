@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31912.275
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Landstar.Identity", "Landstar.Identity\Landstar.Identity.csproj", "{15F6B234-161E-44D2-96C1-91465D3FF775}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{826657DE-C55A-49EB-8285-9D4D71AA5494}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		build\addmigrations.ps1 = build\addmigrations.ps1
+		ApiDockerfile = ApiDockerfile
+		azure-pipelines-vars.yml = azure-pipelines-vars.yml
+		azure-pipelines.yml = azure-pipelines.yml
+		SQL Scripts\CreateClient.sql = SQL Scripts\CreateClient.sql
+		Directory.build.props = Directory.build.props
+		Dockerfile = Dockerfile
+		MvcDockerfile = MvcDockerfile
+		notes.txt = notes.txt
+		nuget.config = nuget.config
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		Rancher Changes.txt = Rancher Changes.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "deployment", "deployment", "{65B0AF8A-101B-42AE-AA4F-91F50D9497F4}"
+	ProjectSection(SolutionItems) = preProject
+		deployment\deployment_guide.dev.yml = deployment\deployment_guide.dev.yml
+		deployment\deployment_guide.dr.yml = deployment\deployment_guide.dr.yml
+		deployment\deployment_guide.qa.yml = deployment\deployment_guide.qa.yml
+		deployment\deployment_guide.stage.yml = deployment\deployment_guide.stage.yml
+		deployment\deployment_guide.yml = deployment\deployment_guide.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{15F6B234-161E-44D2-96C1-91465D3FF775}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15F6B234-161E-44D2-96C1-91465D3FF775}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15F6B234-161E-44D2-96C1-91465D3FF775}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15F6B234-161E-44D2-96C1-91465D3FF775}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{65B0AF8A-101B-42AE-AA4F-91F50D9497F4} = {826657DE-C55A-49EB-8285-9D4D71AA5494}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {20E1B980-850F-434A-8B06-228C006C6E72}
+	EndGlobalSection
+EndGlobal

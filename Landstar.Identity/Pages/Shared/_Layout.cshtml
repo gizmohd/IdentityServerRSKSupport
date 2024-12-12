@@ -1,0 +1,78 @@
+
+@inject IConfiguration config
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+
+  <title>Landstar System, inc.</title>
+
+  <link rel="icon" type="image/x-icon" href="~/favicon.ico" />
+  <link rel="shortcut icon" type="image/x-icon" href="~/favicon.ico" />
+
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link type="text/css" rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+  @* Add the Kendo Bootstrap theme: *@
+  <link rel="stylesheet" href="https://kendo.cdn.telerik.com/themes/8.2.1/bootstrap/bootstrap-main.css" />
+  
+  @{
+    _=bool.TryParse(config["DataDog:Enabled"], out bool dataDogEnabled);
+    if (dataDogEnabled){
+  <script>
+    (function(h,o,u,n,d) {
+      h=h[d]=h[d]||{q:[],onReady:function(c){h.q.push(c)}}
+      d=o.createElement(u);d.async=1;d.src=n
+      n=o.getElementsByTagName(u)[0];n.parentNode.insertBefore(d,n)
+    })(window,document,'script','https://www.datadoghq-browser-agent.com/us5/v5/datadog-rum.js','DD_RUM')
+    window.DD_RUM.onReady(function() {
+      window.DD_RUM.init({
+        clientToken: '@config["DataDog:ClientToken"]',
+        applicationId: '@config["DataDog:ApplicationId"]',
+        // `site` refers to the Datadog site parameter of your organization
+        // see https://docs.datadoghq.com/getting_started/site/
+        site: '@config["DataDog:Site"]',
+        service: '@config["DataDog:Service"]',
+        env: '@config["DataDog:Environment"]',
+        trackSessionAcrossSubdomain: true,
+        // Specify a version number to identify the deployed version of your application in Datadog
+        version: '@ConfigurationExtensions.API_ENGINE_VERSION',
+        sessionSampleRate: 100,
+        sessionReplaySampleRate: 100,
+        trackUserInteractions: true,
+        trackResources: true,
+        trackLongTasks: true,
+        defaultPrivacyLevel: 'allow',
+      });
+    })
+  </script>
+    }
+  }
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+          integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+          integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+          crossorigin="anonymous"></script>
+  @* Add the Kendo UI scripts: *@
+  <script src="https://kendo.cdn.telerik.com/2024.3.806/js/kendo.all.min.js"></script>
+  <script src="https://kendo.cdn.telerik.com/2024.3.806/js/kendo.aspnetmvc.min.js"></script>
+</head>
+<body>
+  <partial name="_Nav" />
+
+  <div class="container body-container">
+    @RenderBody()
+  </div>
+
+  <script src="https://unpkg.com/@@progress/kendo-licensing/dist/index.js" integrity="sha384-nauap+GC0iXg7loB6bpMulr0A0jkXeOb1Q6WtIOTFAILBl0sKStdDD47tc7kO/GQ" crossorigin="anonymous"></script>
+
+  @RenderSection("scripts", required: false)
+
+  <script type="text/javascript" href="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>

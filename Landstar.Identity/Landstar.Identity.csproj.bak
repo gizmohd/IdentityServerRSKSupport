@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk.Web">
+		<PropertyGroup>
+				<TargetFramework>net8.0</TargetFramework>
+				<UserSecretsId>EF6B27BB-7768-4050-97BE-BE6ABB24A6C8</UserSecretsId>
+				<ProjectGuid>{15F6B234-161E-44D2-96C1-91465D3FF775}</ProjectGuid>
+				<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+				<GenerateDocumentationFile>true</GenerateDocumentationFile>
+				<NoWarn>$(NoWarn);1591</NoWarn>
+		 		<IsPackable>false</IsPackable>
+				<LangVersion>latest</LangVersion>
+				<NullableContextOptions>enable</NullableContextOptions>
+				<EnableNETAnalyzers>true</EnableNETAnalyzers>
+		</PropertyGroup>
+		<ItemGroup>
+				<Content Remove="Properties\launchSettings - Copy.json" />
+		</ItemGroup>
+		<ItemGroup>
+				<_WebToolingArtifacts Remove="Properties\launchSettings - Copy.json" />
+		</ItemGroup>
+		<ItemGroup>
+				<PackageReference Include="Duende.BFF" Version="2.2.0" />
+				<PackageReference Include="Duende.IdentityServer" Version="7.0.1" />
+				<PackageReference Include="Duende.IdentityServer.AspNetIdentity" Version="7.0.1" />
+				<PackageReference Include="Duende.IdentityServer.Configuration" Version="7.0.1" />
+				<PackageReference Include="Duende.IdentityServer.Configuration.EntityFramework" Version="7.0.1" />
+				<PackageReference Include="Humanizer" Version="2.14.1" />
+				<PackageReference Include="Landstar.Cloud.Analyzers" Version="2024.2.7.1" />
+				<PackageReference Include="Landstar.Identity.Data" Version="2023.10.26.4" />
+				<PackageReference Include="Landstar.Providers.CommunicationsHub" Version="2024.2.7.1" />
+
+				<PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="7.0.9" />
+				<PackageReference Include="Landstar.Cloud.Clients" Version="2024.2.12.6" />
+				<PackageReference Include="Landstar.Cloud.Engines" Version="2024.2.12.2" />
+				<PackageReference Include="Landstar.Logging" Version="2024.1.12.7" />
+				<PackageReference Include="Landstar.RabbitMQ" Version="2024.1.10.1" />
+				<PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="7.0.9" />
+				<PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.0-preview5.24024.3" />
+
+				<PackageReference Include="Microsoft.Graph" Version="5.41.0" />
+				<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+				<PackageReference Include="Razor.Templating.Core" Version="1.9.0" />
+				<PackageReference Include="Rsk.Saml.DuendeIdentityServer" Version="9.0.0" />
+				<PackageReference Include="Rsk.Saml.DuendeIdentityServer.EntityFramework" Version="9.0.0" />
+				<PackageReference Include="System.Diagnostics.DiagnosticSource" Version="8.0.0" />
+				<PackageReference Include="System.Text.Json" Version="8.0.1" />
+				<PackageReference Include="Telerik.UI.for.AspNet.Core" Version="2023.3.1010" />
+		</ItemGroup>
+		<ItemGroup>
+				<WCFMetadata Include="Connected Services" />
+		</ItemGroup>
+		<ItemGroup>
+				<None Include="Properties\launchSettings - Copy.json">
+						<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+						<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+						<CopyToPublishDirectory>Never</CopyToPublishDirectory>
+				</None>
+				<None Include="Views\Templates\ConfirmEmail.cshtml" />
+				<None Include="Views\Templates\Generic.cshtml" />
+				<None Include="Views\Templates\ResetPassword.cshtml" />
+				<None Include="Views\Templates\_Layout.cshtml" />
+				<None Include="Views\_ViewImports.cshtml" />
+				<None Include="Views\_ViewStart.cshtml" />
+				<None Include="wwwroot\lib\kendo\kendo-ui-license.js" />
+		</ItemGroup>
+		<ItemGroup>
+				<Folder Include="Connected Services\" />
+		</ItemGroup>
+	 
+</Project>

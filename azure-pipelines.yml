@@ -1,0 +1,96 @@
+resources:
+  repositories:
+  - repository: SharedBuildTools
+    type: git
+    name: Shared Libraries/buildtools
+    path: _buildtools
+  - repository: DevOps.Automation
+    type: git
+    name: Shared Libraries/DevOps.Automation
+    path: _DevOps.Automation
+    
+trigger: 
+  branches:
+    include:
+    - main
+    - develop
+
+pr:
+  branches:
+    include:
+    - main
+    - develop
+  autoCancel: true
+
+schedules:
+- cron: "0 0 * * 5"
+  displayName: Weekly Dev build
+  branches:
+    include:
+    - develop
+  always: true
+
+- cron: "0 0 * * 6"
+  displayName: Weekly main build
+  branches:
+    include:
+    - main
+  always: true
+  
+variables:
+  - template: templates/variables.yml@SharedBuildTools
+  - template: azure-pipelines-vars.yml
+  - group: veracode
+  
+stages:
+- stage: build
+  displayName: "Build Identity Server"
+  pool:
+    name: Landstar
+  jobs: 
+  - job: release_build
+    displayName: "Release Build"
+    steps:
+    - template: templates/build_initialization.yml@SharedBuildTools
+      parameters:
+        DotNetCoreVersion: $(DotNetCoreVersion)
+        nodeVersion: $(nodeVersion)
+        sonarScannerMode: $(sonarScannerMode)
+     
+    - template: templates/build_netcore.yml@SharedBuildTools
+      parameters:
+        shouldPublish: true
+
+    - template: templates/docker.yml@SharedBuildTools
+      parameters:
+        condition: and(succeeded(), or(eq(variables['IsQABranch'], True), eq(variables['IsStageBranch'], True), eq(variables['IsDevBranch'], True),eq(variables['IsMasterBranch'], True)))
+        containerRegistry: $(ACR.Name)
+        tags: $(buildTagLowerCase)
+        Dockerfile: '**/Dockerfile'
+
+    - ${{ if ne(variables['Build.Reason'], 'Schedule') }}:  
+      - template: templates/build_cleanup.yml@SharedBuildTools
+        parameters:
+          publishArtifacts: true 
+
+    - ${{ if eq(variables['Build.Reason'], 'Schedule') }}:  
+      - template: templates/build_cleanup.yml@SharedBuildTools
+        parameters:
+          publishArtifacts: true 
+          pathtoPublish: $(Build.SourcesDirectory)
+
+    - task: PublishBuildArtifacts@1
+      displayName: Publish Deployment Folder
+      inputs:
+        PathtoPublish:  $(Build.SourcesDirectory)/$(Build.Repository.Name)/deployment
+        ArtifactName: deployment
+        publishLocation: Container
+    - template:  templates/launchdarkly.yml@SharedBuildTools
+      parameters:
+        ProjectPath: $(Build.SourcesDirectory)/$(Build.Repository.Name)
+        ProjectKey: default
+
+- ${{ if ne(variables['Build.Reason'], 'Schedule') }}:  
+  - template: templates/ansible_release_stages.yml@SharedBuildTools
+    parameters:
+      mergeBranch: main

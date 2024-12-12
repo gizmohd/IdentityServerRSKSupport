@@ -1,0 +1,128 @@
+##################################################
+## Landstar App Deployment Guide - DR (v1.1.1)  ##
+##################################################
+## This yaml is used to apply DR environmental settings to override the SAME items found in the deployment_guide.yml (Prod) doc.
+## ONLY the items already outlined below are currently supported for environmental override.
+##
+## >>>>>> CURRENTLY THE ONLY ITEM THAT SHOULD BE SET SPECIFICALLY IN DR IS 'replicas' = 0 AND 'suspend' = true AT THE END OF THIS DOC <<<<<<<
+##
+## *NOTES*
+##   Help comments in this template are prepended with "##"
+##   Commented yaml portions are prepended with a single "#"
+##   Always ensure that any uncommented items retain proper yaml indentation.
+##     Sub items should always be indented 2 SPACES, and tabs are not allowed.
+##
+## *Recent changes*
+##   - Added host alias env overrides
+
+
+##################
+##  Configmaps  ##
+##################
+## NOTE - the entire configmap from the deployment_guide.yml must be defined here, AND
+##        values for 'name'/'keyname' MUST match for overrides to work properly.
+## Uncomment lines below to override/create DR specific configmaps
+## Duplicate lines below 'configmaps' (name, data, & keyname) for multiple configmaps
+## Duplicate the 'keyname' line (as needed) for multiple key/value pairs in the same configmap
+#configmaps: 
+#  - name: name 
+#    data:
+#      keyname: value 
+
+
+##########################
+## NGINX EXT Configmaps ##
+##########################
+## Nginx configs for EXTERNAL traffic. Usually associated with Azure Front Door configuration.
+## Uncomment lines below to override external nginx entry in DR env.
+## NOTE - single quotes can NOT be used in your nginx config
+## 'key' -- Replace 'new_key' with the same name used in 'NGINX EXT Configmaps' section of deployment_guide.yml.
+## Then CAREFULLY edit the lines *BELOW* 'value |'. MUST maintain proper indentation.
+#nginx_ext_configmaps:
+#  - key: "new_key.conf" 
+#    value: |
+#      server {
+#        listen 8080;
+#        server_name new_DRurl.domain.com;
+#        return 301 https://new_DRurl.domain.com$request_uri;
+#      }
+#      server {
+#        listen 8443 ssl;
+#        server_name new_DRurl.domain.com;
+#        include server_blocks/common_ssl.cfg;
+#        location /specific_endpoint {
+#          include server_blocks/common.cfg;
+#          proxy_pass http://workloadname.namespacename:8080;
+#        }
+#        location / {
+#          include server_blocks/common.cfg;
+#          proxy_pass http://workloadname.namespacename:8080;
+#        }
+#      }      
+
+
+##########################
+## NGINX INT Configmaps ##
+##########################
+## Nginx configs for INTERNAL traffic. Usually associated with service exposure for other internal Landstar systems.
+## Uncomment lines below to override internal nginx entry in DR env.
+## NOTE - single quotes can NOT be used in your nginx config
+## 'key' -- Replace 'new_key' with the same name used in 'NGINX INT Configmaps' section of deployment_guide.yml.
+## Then CAREFULLY edit the lines *BELOW* 'value |'. MUST maintain proper indentation.
+#nginx_int_configmaps:
+#  - key: "new_key.conf" 
+#    value: |
+#      server {
+#        listen 8080;
+#        server_name new_DRurl.domain.com;
+#        return 301 https://new_DRurl.domain.com$request_uri;
+#      }
+#      server {
+#        listen 8443 ssl;
+#        server_name new_DRurl.domain.com;
+#        include server_blocks/common_ssl.cfg;
+#        location /specific_endpoint {
+#          include server_blocks/common.cfg;
+#          proxy_pass http://workloadname.namespacename:8080;
+#        }
+#        location / {
+#          include server_blocks/common.cfg;
+#          proxy_pass http://workloadname.namespacename:8080;
+#        }
+#      }
+
+
+###################
+##  Deployments  ##
+###################
+## NOTE - values for 'name'/'hostname' MUST match what's in the deployment_guide.yml for overrides to work properly.
+## DR specific local environment variables for app. Consider placing these in appsettings instead.
+## Uncomment the 4 lines below. Duplicate the 2 lines below 'env_vars' for add. workload environment variables.
+deployments:  
+#  env_vars: 
+#    - name: key_name
+#      value: key_value
+#  host_aliases: 
+#    - hostname: fqdn_hostname 
+#      ip: ip_address 
+
+## Uncomment the line below to specify a different pod count for the AKS-DR cluster
+  replicas: 0
+
+
+################
+##  Cronjobs  ##
+################
+## NOTE - values for 'name'/'hostname' MUST match what's in the deployment_guide.yml for overrides to work properly.
+## DR specific local environment variables for app. Consider placing these in appsettings instead.
+## Uncomment the 4 lines below. Duplicate the 2 lines below 'env_vars' for add. cronjob environment variables.
+cronjobs:  
+#  env_vars: 
+#    - name: key_name
+#      value: key_value
+#  host_aliases: 
+#    - hostname: fqdn_hostname 
+#      ip: ip_address 
+
+## Uncomment the line below to specify a different cronjob status for the AKS-DR cluster
+  suspend: true

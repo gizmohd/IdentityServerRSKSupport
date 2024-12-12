@@ -1,0 +1,8 @@
+﻿@inject IStringLocalizer<SharedResource> Localizer
+@if (!ViewContext.ModelState.IsValid)
+{
+  <div class="alert alert-danger">
+    <strong>@Localizer["Error"]</strong>
+    <div asp-validation-summary="All" class="danger"></div>
+  </div>
+}

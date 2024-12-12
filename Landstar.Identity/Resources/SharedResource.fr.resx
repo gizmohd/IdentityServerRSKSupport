@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Logout" xml:space="preserve">
+    <value>Déconnexion</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Se connecter</value>
+  </data>
+  <data name="Choose how to login" xml:space="preserve">
+    <value>Choisissez comment vous connecter</value>
+  </data>
+  <data name="Local Account" xml:space="preserve">
+    <value>Compte local</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Nom d'utilisateur</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Mot de passe</value>
+  </data>
+  <data name="Remember My Login" xml:space="preserve">
+    <value>Se souvenir de mon identifiant</value>
+  </data>
+  <data name="Forgot your password?" xml:space="preserve">
+    <value>Mot de passe oublié ?</value>
+  </data>
+  <data name="Register New Account" xml:space="preserve">
+    <value>Créer un nouveau compte</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="Landstar Online" xml:space="preserve">
+    <value>Landstar en ligne</value>
+  </data>
+  <data name="Sign in with Google" xml:space="preserve">
+    <value>Connectez-vous avec Google</value>
+  </data>
+  <data name="Sign in with Landstar Corporate" xml:space="preserve">
+    <value>Connectez-vous avec Landstar Corporate</value>
+  </data>
+  <data name="Invalid login request" xml:space="preserve">
+    <value>Demande de connexion invalide</value>
+  </data>
+  <data name="There are no login schemes configured for this request." xml:space="preserve">
+    <value>Aucun schéma de connexion n'est configuré pour cette demande.</value>
+  </data>
+  <data name="Request culture provider:" xml:space="preserve">
+    <value>Demande de fournisseur de culture :</value>
+  </data>
+  <data name="Language:" xml:space="preserve">
+    <value>Langue:</value>
+  </data>
+  <data name="External Account" xml:space="preserve">
+    <value>Compte externe</value>
+  </data>
+  <data name="Would you like to logout of your Landstar account?" xml:space="preserve">
+    <value>Souhaitez-vous vous déconnecter de votre compte Landstar ?</value>
+  </data>
+  <data name="You are now logged out" xml:space="preserve">
+    <value>Vous êtes maintenant déconnecté</value>
+  </data>
+  <data name="ClickHereToReturn" xml:space="preserve">
+    <value>&lt;div&gt;
+Cliquez &lt;a class="PostLogoutRedirectUri" href="@Model.View.PostLogoutRedirectUri"&gt;ici&lt;/a&gt; pour revenir à l'application précédente.
+&lt;/div&gt;</value>
+  </data>
+  <data name="Sign Out" xml:space="preserve">
+    <value>Se déconnecter</value>
+  </data>
+  <data name="Manage your account" xml:space="preserve">
+    <value>Gérez votre compte</value>
+  </data>
+  <data name="Change your account settings" xml:space="preserve">
+    <value>Modifiez les paramètres de votre compte</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profil</value>
+  </data>
+  <data name="Link to Landstar Online Account (Legacy)" xml:space="preserve">
+    <value>Lien vers le compte Landstar Online (Legacy)</value>
+  </data>
+  <data name="External logins" xml:space="preserve">
+    <value>Connexions externes</value>
+  </data>
+  <data name="Two-factor authentication" xml:space="preserve">
+    <value>Authentification à deux facteurs</value>
+  </data>
+  <data name="Update password" xml:space="preserve">
+    <value>Mettre à jour le mot de passe</value>
+  </data>
+  <data name="Delete Personal Data" xml:space="preserve">
+    <value>Supprimer les données personnelles</value>
+  </data>
+  <data name="Deleting this data will permanently remove your account, and this cannot be recovered." xml:space="preserve">
+    <value>La suppression de ces données supprimera définitivement votre compte et ne pourra pas être récupérée.</value>
+  </data>
+  <data name="Delete data and close my account" xml:space="preserve">
+    <value>Supprimer les données et fermer mon compte</value>
+  </data>
+  <data name="Disable two-factor authentication (2FA)" xml:space="preserve">
+    <value>Désactiver l'authentification à deux facteurs (2FA)</value>
+  </data>
+  <data name="This action only disables 2FA" xml:space="preserve">
+    <value>Cette action désactive uniquement la 2FA</value>
+  </data>
+  <data name="Disable2FAMessage" xml:space="preserve">
+    <value>La désactivation de la 2FA ne modifie pas les clés utilisées dans les applications d'authentification. Si vous souhaitez modifier la clé
+utilisée dans une application d'authentification, vous devez</value>
+  </data>
+  <data name="reset your authenticator keys." xml:space="preserve">
+    <value>réinitialisez vos clés d'authentification.</value>
+  </data>
+  <data name="Disable 2FA" xml:space="preserve">
+    <value>Désactiver 2FA</value>
+  </data>
+  <data name="Download Your Data" xml:space="preserve">
+    <value>Téléchargez vos données</value>
+  </data>
+  <data name="Manage Email" xml:space="preserve">
+    <value>Gérer les e-mails</value>
+  </data>
+  <data name="Send verification email" xml:space="preserve">
+    <value>Envoyer un e-mail de vérification</value>
+  </data>
+  <data name="Change email" xml:space="preserve">
+    <value>Changer d'email</value>
+  </data>
+  <data name="Configure authenticator app" xml:space="preserve">
+    <value>Configurer l'application d'authentification</value>
+  </data>
+  <data name="To use an authenticator app go through the following steps:" xml:space="preserve">
+    <value>Pour utiliser une application d’authentification, suivez les étapes suivantes :</value>
+  </data>
+  <data name="DownloadAuthenticatorHtml" xml:space="preserve">
+    <value>Téléchargez une application d'authentification à deux facteurs comme Microsoft Authenticator pour
+&lt;a href="https://go.microsoft.com/fwlink/?Linkid=825072"&gt;Android&lt;/a&gt; et
+&lt;a href="https://go.microsoft.com/fwlink/?Linkid=825073"&gt;iOS&lt;/a&gt; ou
+Google Authenticator pour
+&lt;a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&amp;amp;hl=fr"&gt;Android&lt;/a&gt; et
+&lt;a href="https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8"&gt;iOS&lt;/a&gt;.</value>
+  </data>
+  <data name="Scan the QR Code or enter this key" xml:space="preserve">
+    <value>Le code de vérification</value>
+  </data>
+  <data name="into your two factor authenticator app. Spaces and casing do not matter." xml:space="preserve">
+    <value>dans votre application d'authentification à deux facteurs. Les espaces et la casse n'ont pas d'importance.</value>
+  </data>
+  <data name="OnceYouHaveScannedQrCode" xml:space="preserve">
+    <value>Une fois que vous avez scanné le code QR ou saisi la clé ci-dessus, votre application d'authentification à deux facteurs vous fournira un code unique. Saisissez le code dans la case de confirmation ci-dessous.</value>
+  </data>
+  <data name="Verification Code" xml:space="preserve">
+    <value>Le code de vérification</value>
+  </data>
+  <data name="Verify" xml:space="preserve">
+    <value>Vérifier</value>
+  </data>
+  <data name="Manage your external logins" xml:space="preserve">
+    <value>Gérez vos connexions externes</value>
+  </data>
+  <data name="Remove this login from your account" xml:space="preserve">
+    <value>Supprimer cette connexion de votre compte</value>
+  </data>
+  <data name="Remove" xml:space="preserve">
+    <value>Retirer</value>
+  </data>
+  <data name="Add another service to log in" xml:space="preserve">
+    <value>Ajouter un autre service pour se connecter</value>
+  </data>
+  <data name="Log in using " xml:space="preserve">
+    <value>Connectez-vous en utilisant</value>
+  </data>
+  <data name="Generate two-factor authentication (2FA) recovery codes" xml:space="preserve">
+    <value>Générer des codes de récupération d'authentification à deux facteurs (2FA)</value>
+  </data>
+  <data name="Put these codes in a safe place." xml:space="preserve">
+    <value>Mettez ces codes dans un endroit sûr.</value>
+  </data>
+  <data name="If you lose your device and don't have the recovery codes you will lose access to your account." xml:space="preserve">
+    <value>Si vous perdez votre appareil et que vous ne disposez pas des codes de récupération, vous perdrez l'accès à votre compte.</value>
+  </data>
+  <data name="GenerateRecoveryCodeMessageHtml" xml:space="preserve">
+    <value>La génération de nouveaux codes de récupération ne modifie pas les clés utilisées dans les applications d'authentification. Si vous souhaitez modifier la clé
+utilisée dans une application d'authentification, vous devez &lt;a asp-page="./ResetAuthenticator"&gt;réinitialiser vos clés d'authentification.&lt;/a&gt;</value>
+  </data>
+  <data name="Generate Recovery Codes" xml:space="preserve">
+    <value>Générer des codes de récupération</value>
+  </data>
+  <data name="Update Phone Number" xml:space="preserve">
+    <value>Mettre à jour le numéro de téléphone</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Sauvegarder</value>
+  </data>
+  <data name="Personal Data" xml:space="preserve">
+    <value>Données personnelles</value>
+  </data>
+  <data name="PersonalDataHtml" xml:space="preserve">
+    <value>&lt;p&gt;Votre compte contient des données personnelles que vous nous avez fournies. Cette page vous permet de télécharger ou de supprimer ces données.&lt;/p&gt;
+&lt;p&gt;
+&lt;strong&gt;La suppression de ces données entraînera la suppression définitive de votre compte, qui ne pourra pas être récupéré.&lt;/strong&gt;
+&lt;/p&gt;
+&lt;form id="download-data" asp-page="DownloadPersonalData" method="post" class="form-group"&gt;
+&lt;button class="btn btn-primary" type="submit"&gt;Télécharger&lt;/button&gt;
+&lt;/form&gt;
+&lt;p&gt;
+&lt;a id="delete" asp-page="DeletePersonalData" class="btn btn-primary"&gt;Supprimer&lt;/a&gt;
+&lt;/p&gt;</value>
+  </data>
+  <data name="Reset authenticator key" xml:space="preserve">
+    <value>Réinitialiser la clé d'authentification</value>
+  </data>
+  <data name="ResetAuthenticatorHtml" xml:space="preserve">
+    <value>&lt;div class="alert alert-warning" role="alert"&gt;
+&lt;p&gt;
+&lt;span class="glyphicon glyphicon-warning-sign"&gt;&lt;/span&gt;
+&lt;strong&gt;Si vous réinitialisez votre clé d'authentification, votre application d'authentification ne fonctionnera pas tant que vous ne l'aurez pas reconfigurée.&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Ce processus désactive la 2FA jusqu'à ce que vous vérifiiez votre application d'authentification.
+Si vous ne terminez pas la configuration de votre application d'authentification, vous risquez de perdre l'accès à votre compte.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;form id="reset-authenticator-form" method="post" class="form-group"&gt;
+&lt;button id="reset-authenticator-button" class="btn btn-danger" type="submit"&gt;Réinitialiser la clé d'authentification&lt;/button&gt;
+&lt;/form&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Set password" xml:space="preserve">
+    <value>Définir un mot de passe</value>
+  </data>
+  <data name="Set your password" xml:space="preserve">
+    <value>Définissez votre mot de passe</value>
+  </data>
+  <data name="SetPasswordWarning" xml:space="preserve">
+    <value>&lt;p class="text-info"&gt;
+Vous n'avez pas de nom d'utilisateur/mot de passe local pour ce site. Ajoutez un
+compte local afin de pouvoir vous connecter sans connexion externe.
+&lt;/p&gt;</value>
+  </data>
+  <data name="Recovery codes" xml:space="preserve">
+    <value>Codes de récupération</value>
+  </data>
+  <data name="CodeWarningHtml" xml:space="preserve">
+    <value>&lt;p&gt;
+&lt;strong&gt;Conservez ces codes dans un endroit sûr.&lt;/strong&gt;
+&lt;/p&gt;
+&lt;p&gt;
+Si vous perdez votre appareil et que vous ne disposez pas des codes de récupération, vous perdrez l'accès à votre compte.
+&lt;/p&gt;</value>
+  </data>
+  <data name="RecoveryCodesHtml_None" xml:space="preserve">
+    <value>&lt;div class="alert alert-danger"&gt;
+&lt;strong&gt;Vous n'avez plus de codes de récupération.&lt;/strong&gt;
+&lt;p&gt;Vous devez &lt;a asp-page="./GenerateRecoveryCodes"&gt;générer un nouvel ensemble de codes de récupération&lt;/a&gt; avant de pouvoir vous connecter avec un code de récupération.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="RecoveryCodesHtml_One" xml:space="preserve">
+    <value>&lt;div class="alert alert-danger"&gt;
+&lt;strong&gt;Il vous reste 1 code de récupération.&lt;/strong&gt;
+&lt;p&gt;Vous pouvez &lt;a asp-page="./GenerateRecoveryCodes"&gt;générer un nouvel ensemble de codes de récupération&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="RecoveryCodesHtml" xml:space="preserve">
+    <value>&lt;div class="alert alert-warning"&gt;
+&lt;strong&gt;Il vous reste {0} codes de récupération.&lt;/strong&gt;
+&lt;p&gt;Vous devez &lt;a asp-page="./GenerateRecoveryCodes"&gt;générer un nouvel ensemble de codes de récupération&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;</value>
+  </data>
+  <data name="Forget this browser" xml:space="preserve">
+    <value>Oublier ce navigateur</value>
+  </data>
+  <data name="Reset recovery codes" xml:space="preserve">
+    <value>Réinitialiser les codes de récupération</value>
+  </data>
+  <data name="Add authenticator app" xml:space="preserve">
+    <value>Ajouter une application d'authentification</value>
+  </data>
+  <data name="Setup authenticator app" xml:space="preserve">
+    <value>Configurer l'application d'authentification</value>
+  </data>
+  <data name="Reset authenticator app" xml:space="preserve">
+    <value>Réinitialiser l'application d'authentification</value>
+  </data>
+  <data name="Update or Add phone number" xml:space="preserve">
+    <value>Mettre à jour ou ajouter un numéro de téléphone</value>
+  </data>
+  <data name="UpdatePhoneNumberMessage" xml:space="preserve">
+    <value>Votre numéro de téléphone mobile enregistré peut être utilisé pour l'authentification à deux facteurs sur votre compte.</value>
+  </data>
+  <data name="Send verification code" xml:space="preserve">
+    <value>Envoyer le code de vérification</value>
+  </data>
+  <data name="Verify Phone Number" xml:space="preserve">
+    <value>Vérifier le numéro de téléphone</value>
+  </data>
+  <data name="VerifyPhoneNumberMessage" xml:space="preserve">
+    <value>Vous devriez recevoir un code sur le numéro de téléphone fourni. Saisissez ce code ci-dessous :</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Soumettre</value>
+  </data>
+  <data name="Access Denied" xml:space="preserve">
+    <value>Accès refusé</value>
+  </data>
+  <data name="You do not have permission to access that resource" xml:space="preserve">
+    <value>Vous n'avez pas l'autorisation d'accéder à cette ressource</value>
+  </data>
+  <data name="Confirm email" xml:space="preserve">
+    <value>Confirmez votre email</value>
+  </data>
+  <data name="Click Here to Return to your Application" xml:space="preserve">
+    <value>Cliquez ici pour revenir à votre demande</value>
+  </data>
+  <data name="ClickHereRedirectMessage" xml:space="preserve">
+    <value>Cliquez ici pour revenir à votre demande : &lt;i&gt;Vous serez redirigé après &lt;strong&gt;</value>
+  </data>
+  <data name="ClickHereToReturn2" xml:space="preserve">
+    <value>&lt;/strong&gt;Secondes&lt;/i&gt;</value>
+  </data>
+  <data name="Confirm email change" xml:space="preserve">
+    <value>Confirm email change</value>
+  </data>
+</root>
