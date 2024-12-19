@@ -1,5 +1,4 @@
-﻿using Landstar.Identity.Models;
-using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 
@@ -18,33 +17,13 @@ namespace Landstar.Identity.Data;
 public class ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : DbContext(options), IDataProtectionKeyContext
 {
 
-  
-  /// <summary>
-  /// Gets or sets the password history.
-  /// </summary>
-  /// <value>
-  /// The password history.
-  /// </value>
-  public DbSet<PasswordHistory> PasswordHistory { get; set; }
+
 
   /// <summary>
   /// A collection of <see cref="T:Microsoft.AspNetCore.DataProtection.EntityFrameworkCore.DataProtectionKey" />
   /// </summary>
   public DbSet<DataProtectionKey> DataProtectionKeys { get; set; }
 
-  
-  /// <summary>
-  /// Gets or sets the user audit records.
-  /// </summary>
-  /// <value>The user audit records.</value>
-  public DbSet<AspNetUserAuditRecord> UserAuditRecords { get; set; }
-
-  /// <summary>
-  /// Gets the user audit web hook records asynchronous.
-  /// </summary>
-  /// <returns>Task&lt;List&lt;UserAuditWebHookRecord&gt;&gt;.</returns>
-  public async Task<IList<UserAuditWebHookRecord>> GetUserAuditWebHookRecordsAsync(CancellationToken cancellationToken = default) =>
-    await Database.SqlQueryRaw<UserAuditWebHookRecord>("exec dbo.GetUserChangeDataForWebHook").ToListAsync(cancellationToken);
 
 
 

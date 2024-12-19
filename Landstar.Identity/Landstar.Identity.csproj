@@ -12,14 +12,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Scripts\PreMigration.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Scripts\PreMigration.sql" />
-  </ItemGroup>
-
-  <ItemGroup>
 
 
     <PackageReference Include="AutoMapper" Version="13.0.1" />

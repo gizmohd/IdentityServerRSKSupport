@@ -16,12 +16,10 @@ using Duende.IdentityServer;
 using Duende.IdentityServer.Configuration;
 using Duende.IdentityServer.EntityFramework.DbContexts;
 using Duende.IdentityServer.EntityFramework.Storage;
-using Duende.IdentityServer.Validation;
 using Flurl;
 using Flurl.Http;
 using IdentityExpress.Identity;
 using Landstar.Identity.Data;
-using Landstar.Identity.Exceptions;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.AspNetCore.Identity;
@@ -55,7 +53,7 @@ public static class HostingExtensions
 {
   const string APPLICATION_NAME = "Landstar.Identity";
 
-  
+
   /// <summary>
   /// Gets the API engine version.
   /// </summary>
@@ -107,7 +105,6 @@ public static class HostingExtensions
     builder.Services.AddRazorPages()
                     .AddViewLocalization();
 
-    builder.Services.AddExceptionHandler<CustomExceptionHandler>();
     builder.Services.AddKendo();
     builder.Services.ConfigureIdentityServer();
 
@@ -117,26 +114,29 @@ public static class HostingExtensions
 
     builder.Services.Configure<PasswordHasherOptions>(opt => opt.IterationCount = 210_000);
 
-    
+
 
     builder.Services.AddKendo();
 
     builder.Services.AddHttpContextAccessor();
 
-    builder.Services.AddOptions<List<Models.PublicUserData>>().Bind(builder.Configuration.GetSection("Authentication:PublicUsers"));
 
     builder.Services.Configure<RequestLocalizationOptions>(options =>
     {
-      string[] supportedCultures = new[] { en_US, fr_CA, es_MX };
+      string[] supportedCultures = [en_US, fr_CA, es_MX];
+
       options.ApplyCurrentCultureToResponseHeaders = true;
+
       options.AddSupportedCultures(supportedCultures)
              .AddSupportedUICultures(supportedCultures)
              .SetDefaultCulture(en_US);
+
       options.AddInitialRequestCultureProvider(new CustomRequestCultureProvider(async context =>
       {
         // My custom request culture logic
         return await Task.FromResult(new ProviderCultureResult("en"));
       }));
+
     });
 
 
@@ -589,7 +589,7 @@ public static class HostingExtensions
 
     services.AddOidcStateDataFormatterCache([.. oidcCache]);
   }
-   
+
   private static void ConfigureApiVersioning(this IServiceCollection services)
   {
     // This gives us the ability to use default version numbering or override it if necessary.

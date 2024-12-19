@@ -1,5 +1,7 @@
 ﻿using Landstar.Identity;
+using Microsoft.AspNetCore.Connections;
 using Serilog;
+using System.Data;
 
 Log.Logger = new LoggerConfiguration()
     .WriteTo.Console()
@@ -17,6 +19,9 @@ try
 #endif
 
   builder.WebHost.UseConfiguration(Landstar.Identity.ConfigurationExtensions.Configuration);
+  var connectionString = "Your-Database-Connection-String";
+
+ 
 
 
   WebApplication app = builder
